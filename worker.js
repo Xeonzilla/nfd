@@ -135,7 +135,7 @@ async function handleGuestMessage(message) {
   if (isblocked) {
     return sendMessage({
       chat_id: chatId,
-      text: '你已被屏蔽\nYour are blocked'
+      text: '你已被屏蔽\nYou are blocked'
     })
   }
 
@@ -152,7 +152,7 @@ async function handleGuestMessage(message) {
 }
 
 async function handleNotify(message) {
-  // 先判断是否是诈骗人员，如果是，则提醒
+  // 判断是否是诈骗人员，如果是，则提醒
   let chatId = message.chat.id;
   if (await isFraud(chatId)) {
     return sendMessage({
